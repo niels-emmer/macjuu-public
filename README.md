@@ -1,5 +1,7 @@
 # macjuu-public
-This repository contains a generalized version of the private version used to build and maintain https://macjuu.com; a 10+ year-old Macbook Air powered by Ubuntu & Docker. Given its age, it can die any moment, so I built it from code.
+This repository contains a generalized version* of the code used to build and maintain https://macjuu.com; a 10+ year-old Macbook Air powered by Ubuntu & Docker. Given its age, it can die any moment, so I built it from code.
+
+*: mainly, all `.env` files were scrubbed from personal info and tokens, available as `.env.example` to re-build your own version from.
 
 Below info is far from complete but should give a good starting point in case you want to build your own selfhosted stacks.
 
@@ -24,7 +26,7 @@ Source repo: [github.com/niels-emmer/macjuu-public](https://github.com/niels-emm
 | scripts | some useful shell scripts |
 
 ## principles
-1. All public facing services should use HTTP/TLS
+1. All public facing services should use HTTPS/TLS
 2. Access to private services and/or storing private information utilize MFA (thanks, Authentik)
 3. All non-transient data is stored on SSD in `$DOCKER_DATA/$stack-name` \
 (on macjuu: `$DOCKER_DATA=/home/userdir/dockerdata`)
