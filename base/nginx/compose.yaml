@@ -7,9 +7,9 @@ services:
       - '${NGINX_ADMIN_PORT}:81'
       - '${NGINX_HTTPS_PORT}:443'
     volumes:
-      - '${NGINX_DATA}/nginx:/data'
-      - '${NGINX_DATA}/letsencrypt:/etc/letsencrypt'
-      - nginxlogs:/data/logs
+      - '${DOCKER_DATA}/nginx/nginx:/data'
+      - '${DOCKER_DATA}/niginx/letsencrypt:/etc/letsencrypt'
+      - 'nginxlogs:/data/logs
     healthcheck:
       test: ["CMD", "/usr/bin/check-health"]
       interval: 10s
@@ -36,7 +36,7 @@ services:
       - "${GOACCESS_HTTP_PORT}:7880"
     volumes:
       - nginxlogs:/opt/log
-      - '${NGINX_DATA}/goaccess:/config'
+      - '${DOCKER_DATA}/nginx/goaccess:/config'
     environment:
       - TZ=${TZ}
     restart: unless-stopped
