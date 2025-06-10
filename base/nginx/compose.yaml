@@ -9,7 +9,7 @@ services:
     volumes:
       - '${DOCKER_DATA}/nginx/nginx:/data'
       - '${DOCKER_DATA}/niginx/letsencrypt:/etc/letsencrypt'
-      - 'nginxlogs:/data/logs
+      - 'nginxlogs:/data/logs'
     healthcheck:
       test: ["CMD", "/usr/bin/check-health"]
       interval: 10s
