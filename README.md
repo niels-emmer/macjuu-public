@@ -28,11 +28,9 @@ Source repo: [github.com/niels-emmer/macjuu-public](https://github.com/niels-emm
 ## principles
 1. All public facing services should use HTTPS/TLS
 2. Access to private services and/or storing private information utilize MFA (thanks, Authentik)
-3. All non-transient data is stored on SSD in `$DOCKER_DATA/$stack-name` \
-(on macjuu: `$DOCKER_DATA=/home/userdir/dockerdata`)
-4. Large (cool) data can be stored on HDD in `$DOCKER_EXTDATA/$stack-name` \
-(on macjuu: `$DOCKER_EXTDATA=/mnt/dockerdata`) 
-5. Stack dir should only contain `compose.yaml` and .`env` files, no persistent data.
+3. All non-transient data is stored on SSD in `$DOCKER_DATA/$stack-name` 
+4. Large (cool) data can be stored on HDD in `$DOCKER_EXTDATA/$stack-name`
+5. Stack directories should only contain `compose.yaml` and .`env` files, no persistent data.
 
 ## prerequisites
 - Recent Ubuntu Server (or equivalent) install with ssh or terminal access.
