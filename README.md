@@ -95,7 +95,7 @@ cd ../..
 
 Komodo can be found at http://[dockerhost-ip]:9120. It is setup to sync its configuration to `main.toml` in the root of this repository. This configuration includes stack definitions for each workload, sourced from the `stacks` folder in this same repo.
 
-![Komodo step 2](https://github.com/niels-emmer-public/macjuu/blob/main/share/komodo2.png)
+![Komodo step 2](https://github.com/niels-emmer/macjuu-public/blob/main/share/komodo2.png)
 
 1. If needed, import full configuration from [main.toml](https://github.com/niels-emmer/macjuu-public/blob/main/main.toml). This will setup server and all stack definitions, install the notifier and sync.
 2. Then deploy stacks as needed. Each stack will be pulled from `github.com/niels-emmer/macjuu-public` and run the compose file in `stacks/$stackname`, which is also set as run-directory and will pick up `.env` and config files when deployed by Komodo.
