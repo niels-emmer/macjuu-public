@@ -1,0 +1,23 @@
+services:
+  backrest:
+    image: garethgeorge/backrest:latest
+    container_name: backrest
+    hostname: backrest
+    volumes:
+      - $DOCKER_DATA/backrest/data:/data
+      - $DOCKER_DATA/backrest/config:/config
+      - $DOCKER_DATA/backrest/cache:/cache
+      - $DOCKER_DATA/backrest/tmp:/tmp
+      - /var/lib/docker/volumes:/userdata/dockervolumes  # Source: local docker volumes
+      - $DOCKER_DATA:/userdata/dockerdata  # Source: local docker data
+      - $DOCKER_EXTDATA:/userdata/dockerextdata # Source: External docker data
+      - /mnt/backup/backups:/repos     # Destination: Root backup-folder on external backup disk
+    environment:
+      - BACKREST_DATA=/data
+      - BACKREST_CONFIG=/config/config.json
+      - XDG_CACHE_HOME=/cache
+      - TMPDIR=/tmp
+      - TZ=Europe/Amsterdam
+    ports:
+      - "9898:9898"
+    restart: unless-stopped
