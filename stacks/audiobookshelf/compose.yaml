@@ -1,0 +1,12 @@
+services:
+  audiobookshelf:
+    image: advplyr/audiobookshelf
+    ports:
+      - ${AUDIOBOOKSHELF_PORT}:80
+    volumes:
+      - $DOCKER_DATA/audiobookshelf/metadata:/metadata
+      - $DOCKER_DATA/audiobookshelf/config:/config
+      - $DOCKER_EXTDATA/audiobookshelf/podcasts:/podcasts
+      - $DOCKER_EXTDATA/audiobookshelf/audiobooks:/audiobooks
+    container_name: audiobookshelf
+    restart: unless-stopped
